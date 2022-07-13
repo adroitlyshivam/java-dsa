@@ -1,0 +1,25 @@
+###BinarySearch  
+
+public class MyClass {
+    	static int binarysearch(int[] a, int key,int n) {
+		int i=0;
+		
+		while(i<=n) {
+			int mid=(i+n)/2;
+			if(a[mid]==key) {
+				return mid;
+			}
+			else if(key<a[mid]) {
+				n=mid-1;			}
+			else
+				i=mid +1;
+		}
+		return -1;
+	}
+    public static void main(String args[]) {
+     
+int n[]={1,2,3,34,45,56,67};
+ 
+      System.out.println(binarysearch(n,67,n.length-1));
+    }
+}
