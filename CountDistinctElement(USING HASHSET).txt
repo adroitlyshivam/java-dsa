@@ -1,0 +1,19 @@
+/*  Count Distnict Element int given arrary in   o(n)  */
+
+ import java.util.*;
+public class MyClass {
+    static void CountDistinctElement(int [] a){
+        HashSet<Integer>set=new HashSet<>();
+        for(int i:a){
+            set.add(i);
+        }
+            System .out.println(set.size());
+    }
+    
+    public static void main(String args[]) {
+   int arr[]={12,12,23,23,34,34,4};
+   CountDistinictElement(arr);
+
+    
+    }
+}
