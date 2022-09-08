@@ -1,0 +1,54 @@
+ 
+public class Main
+{
+    static Node REverseK(Node head,int k){
+        Node curr=head,preVfirst=null,newhead=null;
+        while(curr!=null){
+            Node prev=null,first=curr;
+            int count=0;
+            while(count<k&&curr!=null){
+                Node temp=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=temp;
+                count++;
+            }
+            if(newhead==null){
+                newhead=prev;
+            }
+            else{
+                preVfirst.next=prev;
+            }
+            preVfirst=first;
+        }
+        return newhead;
+    }
+    static void printLL(Node head){
+        Node curr=head;
+        while(curr!=null){
+            System.out.print(curr.data+"->");
+            curr=curr.next;
+        }
+        System.out.print( "end");
+        
+    }
+    public static void main(String[] args) {
+     
+        Node head=new Node(10);
+         head.next=new Node(20);
+         head.next.next=new Node(30);
+         head.next.next.next=new Node(40);
+        head.next.next.next.next=new Node(50);
+        
+printLL(head);
+Node newhead=REverseK(head,2);
+printLL(newhead);
+    }
+} 
+class Node{
+    int data;
+    Node next;
+    public Node(int data){
+   this.data=data;     
+    }
+}
