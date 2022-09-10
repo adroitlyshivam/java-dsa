@@ -1,0 +1,56 @@
+ 
+import java.util.*;
+public class Main
+{
+    static Node ReverseLL(Node head){
+        Node pre=null;
+        Node cur=head;
+        while(cur!=null){
+            Node temp=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=temp;
+           
+        }
+    
+        return pre;
+    }
+    static void printLL(Node head){
+    Node curr=head;
+    while(curr !=null){
+        System.out.println(curr.data);
+        curr=curr.next;
+    }
+}
+
+    public static void main(String[] args) {
+        Node n1=new Node(10);
+        Node n2=new Node(20);
+        Node n3=new Node (30);
+        Node n4=new Node (10);
+         
+        Node head1=n1;
+         
+        n1.next=n2;
+        n2.next=n3;
+        n3.next=n4;
+        Node l1=new Node(10);
+        Node l2=new Node(20);
+         Node l3=new Node(30);
+         Node head2=l1;
+         l1.next=l2;
+         l2.next=l3;
+    // Node Newhead= insertLL(head,4,4);ead
+    printLL(head1);
+    Node Newhead=ReverseLL(head1);
+    
+    printLL(Newhead);
+}
+}
+class Node{
+    int data;
+    Node next;
+    public Node(int data){
+        this.data=data;
+    }
+}
